@@ -1,0 +1,48 @@
+body{
+    
+}
+nav{
+    font-size: 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
+nav a{
+    text-decoration: none;
+    color: white;
+}
+
+.main{
+    margin-top: 50px;
+    margin-bottom: 0;
+}
+.welcome{
+    color: white;
+    z-index: 5;
+}
+
+.btn{
+    background-color: white;
+    color:black;
+}
+
+.btn:hover{
+    background-color: whitesmoke;
+    color:black;
+}
+#overlay{
+    background: linear-gradient(45deg,
+    rgba(245,70,66, 0.75),
+    rgba(8,83,156, 0.75)),url('OIG.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 50vh;
+}
+
+.about img{
+    width: 100%;
+}
+
+.about div{
+    max-height: 90%;
+}

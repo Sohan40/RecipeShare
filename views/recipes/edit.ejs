@@ -1,0 +1,47 @@
+<% layout('layouts/boilerplate')%>
+   
+
+    <div class="row">
+        <h1 class="text-center">Edit Campground</h1>
+        <div class="col-6 offset-3">
+            <form action="/recipes/<%=recipe._id%>?_method=PUT" method="post" novalidate class="validated-form" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" class="form-control" name="recipe[title]" required id="title"value="<%=recipe.title%>">
+                </div >
+                
+                <div class="mb-3">
+                    <label for="image" class="form-label">Image</label>
+                    <input type="file" multiple class="form-control" name="image"  id="image">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea type="text" class="form-control" name="recipe[description]" required  id="description"><%=recipe.description%></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="ingredients" class="form-label">Ingredients</label>
+                    <textarea type="text" class="form-control" name="recipe[ingredients]" required  id="ingredients"><%=recipe.ingredients%></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="instructions" class="form-label">Description</label>
+                    <textarea type="text" class="form-control" name="recipe[instructions]" required  id="instructions"><%=recipe.instructions%></textarea>
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-info" type="submit">Update</button>
+                </div>
+
+                <% recipe.images.forEach(function(img,i){%>
+                    <img src="<%=img.thumbnail%>" class="img-thumbnail"  alt="">
+                    <div class="form-check-inline">
+                        <input type="checkbox" name="deleteImg[]" id="img-<%=i%>" value="<%=img.filename%>">
+                    </div>
+                    <label for="img-<%=i%>">Delete?</label>
+               <% })%> 
+            </form>
+            <div class="mb-3">
+                <a href="/recipes/<%=recipe._id%>">Back to recipe</a>
+            </div>
+        </div>
+    </div>
+ 

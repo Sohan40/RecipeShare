@@ -1,0 +1,58 @@
+<% layout('layouts/boilerplate')%>
+    <div class="row">
+        <h1 class="text-center">New Recipe</h1>
+        <div class="col-6 offset-3">
+            <form action="/recipes" method="post" class="validated-form" novalidate enctype="multipart/form-data" >
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" class="form-control" name="recipe[title]" required id="title">
+                </div >
+
+
+                <div class="mb-3">
+                    <label for="image" class="form-label">Image</label>
+                    <input type="file" multiple class="form-control" name="image" required id="image">
+                </div>
+                <div class="mb-3">
+                    <label for="ingredients" class="form-label">Ingredients</label>
+                    <input type="text" class="form-control" name="recipe[ingredients]" required id="ingredients">
+                </div >
+              
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea type="text" class="form-control" name="recipe[description]" required id="description"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="instructions" class="form-label">Instructions</label>
+                    <textarea type="text" class="form-control" name="recipe[instructions]" required id="instructions"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <button class="btn btn-success" type="submit">Submit</button>
+                </div>
+            </form>
+            <a href="/recipes">back</a>
+        </div>
+    </div>
+
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+(() => {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.validated-form')
+
+  // Loop over them and prevent submission
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
+    </script>

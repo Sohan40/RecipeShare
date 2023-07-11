@@ -1,0 +1,27 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    z-index: 9999;
+  }
+
+  .navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .navbar li {
+    float: right;
+  }
+
+  .navbar li a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+  }
